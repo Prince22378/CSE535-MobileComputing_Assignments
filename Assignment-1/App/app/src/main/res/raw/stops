@@ -1,0 +1,4 @@
+1 | New Delhi;true;1000.0 | London;true;8000.0
+2 | New Delhi;true;1000.0 | Dubai;true;2500.0 | London;true;8000.0
+3 | New Delhi;true;1000.0 | Dubai;true;2500.0 | Frankfurt;true;3000.0 | Italy;true;8000.0 | Mumbai;false;1200.0 | Paris;false;4000.0 | New York;false;4000.0 |London;true;5000.0
+4 | Mumbai;false;1200.0 | Paris;false;4000.0 | London;true;5000.0
