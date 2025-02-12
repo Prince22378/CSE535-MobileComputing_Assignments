@@ -26,12 +26,12 @@ fun StopItem(stop: Stop, isCurrentStop: Boolean, unit: DistanceUnit){
         Text(text = stop.name, fontSize = 18.sp, fontWeight = FontWeight.Bold)
         Text(
             text = "Visa Required: ${if (stop.visaRequired) "Yes" else "No"}",
-            fontSize = 14.sp,
+            fontSize = 15.sp,
         )
         if(stop.distanceFromPrevious>0){
             Text(
                 text = "Distance: ${convertDistance(stop.distanceFromPrevious,unit)}",
-                fontSize = 14.sp,
+                fontSize = 15.sp,
             )
         }
     }
