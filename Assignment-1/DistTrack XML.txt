@@ -1,0 +1,96 @@
+Prince Kumar
+2022378
+XML
+
+Journey Track/DistTrack
+
+# Implementation Details**
+This project is an Android application that allows users to track a journey with multiple stops, view visa requirements, monitor distance progress, and toggle between Kilometers & Miles using RecyclerView and XML-based UI.
+
+---
+
+# Project Breakdown
+
+# activity_main.xml (Main Layout)
+ **Purpose:**  
+Defines the primary layout of the app using LinearLayout with a vertical orientation.
+
+Components Used:
+- TextView → Displays Distance Covered.
+- Horizontal Progress Bar → Shows journey progress.
+- TextView → Displays Remaining Distance.
+- Button (Switch Unit) → Converts distance between Km & Miles.
+- Button (Next Stop) → Moves to the next stop in the journey.
+- RecyclerView → Displays stops dynamically using Lazy Loading.
+
+Key Features:
+**Smooth Layout with Proper Spacing & Padding**  
+**Progress Bar for Visual Tracking**  
+**Lazy Loading of Stop List (RecyclerView)**  
+
+---
+
+# item_stop.xml (Stop Item Layout)
+ **Purpose:**  
+Defines the layout structure for each stop item inside the **RecyclerView**.
+
+Components Used:
+- TextView → Displays Stop Name.
+- TextView → Displays Visa Requirement.
+- TextView → Displays Distance from Previous Stop.
+
+Key Features:
+**Uses `CardView` for Aesthetic Design**  
+**Text Formatting for Better Readability**  
+**Highlighted Current Stop in RecyclerView**  
+
+---
+
+# Data Class: `Stop`
+**Purpose:** 
+Represents each stop in the journey.
+
+Contains Three Values:
+- Stop Name → City/Location name.
+- Visa Requirement → Boolean (true/false).
+- Distance from Previous Stop → Double value in Km.
+
+Key Features:
+* Used in RecyclerView Adapter for Stop Listing 
+* Ensures Structured Data Management**  
+
+---
+
+# StopAdapter Class (RecyclerView Adapter)
+ **Purpose:**  
+Binds stop data to the `RecyclerView`, handling dynamic updates.
+
+How It Works:
+ **Binds Data** from the `stops` list to each item in `RecyclerView`.  
+  **Formats Text** for stop name, visa requirement & distance.  
+  **Highlights the Current Stop** with a different **background color**.  
+  **Handles Click & Unit Switching Dynamically**.  
+
+Key Features:
+* Stops are Displayed Efficiently Using RecyclerView 
+* Current Stop is Highlighted Dynamically  
+* Smooth Transition Between Stops  
+
+# MainActivity Class (Main Execution)
+ **Purpose:**
+Handles app startup, data loading, UI updates, and user interactions.
+
+Steps in Execution: 
+1. Loads Stops Data from stops.txt → Reads from res/raw/stops.txt.
+2. Initializes UI Elements → Buttons, Progress Bar, RecyclerView.
+3. Handles Unit Switching (Km <-> Miles) → toggleUnit() function.
+4. Manages Stop Navigation (Next Stop Button) → reachNextStop() function.
+5. Updates UI Dynamically → Calls updateUI() after every change.
+
+Key Features: 
+* Reads Data from a Text File (stops.txt)
+* Updates UI in Real-Time Based on User Interaction
+* Enables Smooth Navigation Across Stops
+
+
+##Credits: ChatGPT!!!
