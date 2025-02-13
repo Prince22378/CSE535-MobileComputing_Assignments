@@ -1,76 +1,3 @@
-//////package com.example.app1
-//////
-//////import android.view.LayoutInflater
-//////import android.view.View
-//////import android.view.ViewGroup
-//////import android.widget.TextView
-//////import androidx.recyclerview.widget.RecyclerView
-//////
-//////class StopAdapter(private val stops: List<Stop>) : RecyclerView.Adapter<StopAdapter.ViewHolder>() {
-//////
-//////    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-//////        val stopName: TextView = view.findViewById(android.R.id.text1)
-//////    }
-//////
-//////    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-//////        val view = LayoutInflater.from(parent.context)
-//////            .inflate(android.R.layout.simple_list_item_1, parent, false)
-//////        return ViewHolder(view)
-//////    }
-//////
-//////    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//////        val stop = stops[position]
-//////        holder.stopName.text = "${stop.name} - Visa Required: ${if (stop.visaRequired) "Yes" else "No"} - Distance: ${stop.distance} Km"
-//////    }
-//////
-//////    override fun getItemCount(): Int = stops.size
-//////}
-////
-////
-////package com.example.app1
-////
-////import android.graphics.Color
-////import android.view.LayoutInflater
-////import android.view.View
-////import android.view.ViewGroup
-////import android.widget.TextView
-////import androidx.recyclerview.widget.RecyclerView
-////
-////class StopAdapter(private val stops: List<Stop>) : RecyclerView.Adapter<StopAdapter.ViewHolder>() {
-////
-////    private var highlightedPosition = -1
-////
-////    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-////        val stopName: TextView = view.findViewById(android.R.id.text1)
-////    }
-////
-////    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-////        val view = LayoutInflater.from(parent.context)
-////            .inflate(android.R.layout.simple_list_item_1, parent, false)
-////        return ViewHolder(view)
-////    }
-////
-////    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-////        val stop = stops[position]
-////        holder.stopName.text = "${stop.name} - Visa Required: ${if (stop.visaRequired) "Yes" else "No"} - Distance: ${stop.distance} Km"
-////
-////        // Highlight the current stop
-////        if (position == highlightedPosition) {
-////            holder.stopName.setBackgroundColor(Color.YELLOW)
-////        } else {
-////            holder.stopName.setBackgroundColor(Color.TRANSPARENT)
-////        }
-////    }
-////
-////    override fun getItemCount(): Int = stops.size
-////
-////    fun highlightStop(position: Int) {
-////        highlightedPosition = position
-////        notifyDataSetChanged()
-////    }
-////}
-//
-//
 package com.example.app1
 
 import android.graphics.Color
@@ -136,11 +63,6 @@ class StopAdapter(private var stops: List<Stop>, private var isKm: Boolean) : Re
         // Set the background color for the highlighted stop inside the CardView
         holder.stopCard.setCardBackgroundColor(if (position == highlightedPosition) Color.GRAY else Color.WHITE)
     }
-
-
-
-
-
 
     override fun getItemCount(): Int = stops.size
 
