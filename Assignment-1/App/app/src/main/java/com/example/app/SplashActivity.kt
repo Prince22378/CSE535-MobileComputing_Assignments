@@ -54,13 +54,24 @@ fun SplashScreen() {
                 modifier = Modifier
                     .size(350.dp) // Adjust logo size if needed
             )
+
 //            Spacer(modifier = Modifier.height(24.dp))
+
             // Welcome message
             Text(
                 text = "Welcome to DistTrack!",
                 fontSize = 28.sp,
                 color = Color(0xFF80C784)
             )
+
+//            Spacer(modifier = Modifier.height(8.dp))
+
+//            // Subtext message
+//            Text(
+//                text = "Plan your stops effortlessly!",
+//                fontSize = 16.sp,
+//                color = Color.White
+//            )
         }
     }
 }
