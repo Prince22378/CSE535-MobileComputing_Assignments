@@ -1,0 +1,5 @@
+New Delhi;true;0.0
+Dubai;true;3500.0
+Frankfurt;true;5000.0
+New York;false;6000.0
+Mumbai;true;8000.0
