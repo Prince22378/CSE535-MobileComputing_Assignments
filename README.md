@@ -1,1 +1,0 @@
-# CSE535-MobileComputing_Assignments
