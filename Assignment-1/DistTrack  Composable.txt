@@ -1,0 +1,94 @@
+Prince Kumar
+2022378
+Composable
+
+
+DistTrack : Flight Journey Tracker
+Implementation & Approach  
+
+This document explains the approach, thought process, and implementation details used to build the DistTrack app.
+
+Overview:
+The DistTrack allows users to select a route, track multiple stops, monitor distance progress, and switch between Kilometers & Miles. The app provides an interactive UI with seamless navigation and a clean user experience.
+
+Approach Used:
+The implementation is modular and structured, making use of:
+**Jetpack Compose** for UI   
+**LazyColumn** for efficient scrolling  
+**State Management** for progress tracking  
+**Snackbar & Click Effects** for better UI feedback  
+
+Implementation Breakdown
+# Splash Screen (SplashActivity.kt)
+- Provides a professional launch experience with an animated splash screen.
+- Displays the app logo on a blue background for 2-3 seconds before transitioning to Route Selection Activity.
+
+Key Features:
+* Delays for 3 seconds before launching the main app
+* Uses a blue background with centered logo
+* Navigates automatically to Route Selection Activity
+
+---
+
+# Route Selection (RouteSelectionActivity.kt)
+- Reads available routes from stops.txt stored in `res/raw`.
+- Parses the data and structures it into a map of routes.
+- Users enter Start Location & Destination, and available routes are filtered.
+- Displays routes in a clickable LazyColumn with a ripple effect.
+- On selecting a route, the data is passed to MainActivity.
+
+ Key Features:
+*Reads & Parses Stops from `stops.txt`  
+*Filters Routes Dynamically  
+*Shows Available Paths in Clickable Cards* 
+
+---
+
+# Journey Tracking (MainActivity.kt & Application.kt)**
+- Loads the selected stops and initializes tracking.
+- Tracks the current stop index, distance covered, and remaining distance.
+- Displays a linear progress bar for journey progress.
+- Next Stop button increments the stop index.
+- If the final destination is reached, it shows a Snackbar alert.
+- Users can toggle between KM & Miles dynamically.
+
+Key Features:
+*Real-time Journey Progress Tracking  
+*Progress Bar Updates Dynamically 
+*Auto-Scrolling Stop List (LazyColumn)
+*Snackbar Alert When Final Destination is Reached
+
+---
+
+# UI Enhancements
+- Dark Blue Header with a Back Arrow (←) for easy navigation.
+- Clickable Stop Cards with rounded corners & shadows for better aesthetics.
+- Stops List highlights the current stop.
+- Smooth Transitions & Better Spacing for readability.
+- Optimized Performance with LazyColumn to avoid UI lag.
+
+Key Features:
+*Back Navigation with Arrow (←) to Route Selection 
+*Current Stop is Highlighted for Better Visibility  
+*Click Animations & Shadow Effects for Better UI
+
+---
+
+## Challenges & Solution:
+# Challenge: Keeping Header Independent from UI Padding
+  Solution: Used separate Box() to **isolate the header** from other UI elements.
+
+# Challenge: Auto-Scroll to Next Stop
+  Solution: Used rememberLazyListState() with `animateScrollToItem()` to scroll smoothly.
+
+# Challenge: Displaying Data from Text File (`stops.txt`)
+  Solution: Parsed raw text file, structured the data using maps & lists, and filtered routes dynamically.
+
+# Challenge: Making Route Selection Interactive
+  Solution: Used Card() with .clickable{} & shadows to improve the clickable effect.
+
+  
+
+---
+
+Credits: ChatGPT, GeekyShows, WsCube
