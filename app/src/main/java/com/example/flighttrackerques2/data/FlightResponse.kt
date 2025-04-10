@@ -1,4 +1,4 @@
-package com.app.flight_tracker.data
+package com.example.flighttrackerques2.data
 
 data class FlightResponse(
     val data: List<FlightData>

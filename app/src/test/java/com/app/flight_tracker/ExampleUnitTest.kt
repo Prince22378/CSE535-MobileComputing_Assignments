@@ -1,4 +1,4 @@
-package com.app.flight_tracker
+package com.example.flighttrackerques2
 
 import org.junit.Test
 

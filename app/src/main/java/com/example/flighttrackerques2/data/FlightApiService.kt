@@ -1,4 +1,4 @@
-package com.app.flight_tracker.data
+package com.example.flighttrackerques2.data
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,7 +13,17 @@ interface FlightApiService {
         @Query("access_key") accessKey: String,
         @Query("flight_iata") flightNumber: String
     ): FlightResponse
+
+    @GET("flights")
+    suspend fun getFlightsBetween(
+        @Query("access_key") accessKey: String,
+        @Query("dep_iata") depIata: String,
+        @Query("arr_iata") arrIata: String
+    ): FlightResponse
+
 }
+
+
 
 object ApiClient {
     private val logging = HttpLoggingInterceptor().apply {

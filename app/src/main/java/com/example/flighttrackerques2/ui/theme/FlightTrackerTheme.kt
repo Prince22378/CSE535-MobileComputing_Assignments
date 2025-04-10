@@ -1,4 +1,4 @@
-package com.app.flight_tracker.ui.theme
+package com.example.flighttrackerques2.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.*

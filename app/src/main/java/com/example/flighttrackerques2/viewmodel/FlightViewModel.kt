@@ -1,9 +1,10 @@
-package com.app.flight_tracker.viewmodel
+package com.example.flighttrackerques2.viewmodel
+
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.flight_tracker.data.ApiClient
-import com.app.flight_tracker.data.FlightData
+import com.example.flighttrackerques2.data.ApiClient
+import com.example.flighttrackerques2.data.FlightData
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -12,7 +13,6 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
-
 
 class FlightViewModel : ViewModel() {
 
@@ -38,7 +38,7 @@ class FlightViewModel : ViewModel() {
         trackingJob = viewModelScope.launch {
             while (isActive) {
                 try {
-                    val response = ApiClient.api.getFlight("9d05fe1fff997194d6241d90febd2792", flightIata)
+                    val response = ApiClient.api.getFlight("a10ab14288624b268672975c6a502ea7", flightIata)
                     _hasFetchedOnce.value = true
                     if (response.data.isNotEmpty()) {
                         _flightData.value = response.data[0]
@@ -61,4 +61,6 @@ class FlightViewModel : ViewModel() {
         trackingJob = null
         _isTracking.value = false
     }
+
+
 }

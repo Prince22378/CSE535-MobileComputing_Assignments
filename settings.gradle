@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Flight_Tracker"
+rootProject.name = "flighttrackerques2"
 include ':app'
